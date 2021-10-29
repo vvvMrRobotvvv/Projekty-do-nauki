@@ -6,7 +6,9 @@ using namespace std;
 
 void menu()
 {
-	cout << "\n1) Wczytaj" << endl;
+	cout << "\n1) Wczytaj";
+	cout << "\n2) Wypisz";
+	cout << "\n0) Wyjdz" << endl;
 }
 
 int menu_switch()
@@ -14,7 +16,7 @@ int menu_switch()
 	int a;
 	do
 	{
-		if(cin.fail())
+		if (cin.fail())
 		{
 			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -29,7 +31,7 @@ void wczytywanie(string t[], int ile)
 	int a;
 	cout << "\nPodaj ile komorek chcesz wczytac: ";
 	cin >> a;
-	for(int i; i < a; i++)
+	for (int i; i < a; i++)
 	{
 		cout << "Podaj komorke " << ile + 1 << ": ";
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -37,19 +39,35 @@ void wczytywanie(string t[], int ile)
 	}
 }
 
+void wypisz(string t[], int ile)
+{
+    cout << "\nTablica:\n";
+    for(int i = 0; i < ile; i++)
+    {
+        cout << "Komorka nr " << i + 1 << ": " << t[i] << endl;
+    }
+}
+
 int main()
 {
 	int ile = 0;
-	menu();
-	int selection = menu_switch();
 	string tablica[10];
-	switch (selection)
+    int selection;
+	do
 	{
-	case 1:
-		wczytywanie(tablica, ile);
-		break;
-	
-	default:
-		break;
-	}
+        menu();
+	    selection = menu_switch();
+		switch (selection)
+		{
+		case 1:
+			wczytywanie(tablica, ile);
+			break;
+        case 2:
+			wypisz(tablica, ile);
+			break;
+		default:
+			break;
+		}
+	} while (selection != 0);
+	return 0;
 }
