@@ -32,6 +32,7 @@ void wczytywanie(string t[], int ile)
 	for(int i; i < a; i++)
 	{
 		cout << "Podaj komorke " << ile + 1 << ": ";
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		getline(cin, t[ile]);
 	}
 }
