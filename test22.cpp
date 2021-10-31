@@ -24,34 +24,31 @@ bool czy()
 void menu()
 {
 	cout << "Menu glowne:\n";
-	cout << "Pocja 1 wypisz\n";
-	cout << "Pocja 2\n";
-	cout << "Pocja 3\n";
-	cout << "Pocja 0" << endl;
+	cout << "1) Wypisz\n";
+	cout << "2) \n";
+	cout << "3) \n";
+	cout << "0) Wyjdz" << endl;
 }
 
 void wypisz(string t[], int &ile)
 {
-	int x;
-	cout << "\nIle komorek chcesz podac ";
-	cin >> x;
-	while (cin.fail())
-	{
-		cin.clear();
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-		cout << "\nIle komorek chcesz podac ";
-		cin >> x;
-	}
-	for (int i = ile; i < (x + ile - 1); i++)
-	{
-		cout << t[i] << endl;
-	}
+	cout << "\nTablica:\n";
+    for (int i = 0; i < ile; i++)
+    {
+        cout << "Komorka nr " << i + 1 << ": " << t[i] << endl;
+    }
 }
 
 int main()
 {
 	string tablica[10];
-	int ile = 0;
+    tablica[0] = "a";
+    tablica[1] = "b";
+    tablica[2] = "f";
+    tablica[3] = "e";
+    tablica[4] = "d";
+    tablica[5] = "c";
+	int ile = 6;
 	int a;
 	do
 	{
