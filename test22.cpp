@@ -30,9 +30,28 @@ void menu()
 	cout << "Pocja 0" << endl;
 }
 
+void wypisz(string t[], int &ile)
+{
+	int x;
+	cout << "\nIle komorek chcesz podac ";
+	cin >> x;
+	while (cin.fail())
+	{
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cout << "\nIle komorek chcesz podac ";
+		cin >> x;
+	}
+	for (int i = ile; i < (x + ile - 1); i++)
+	{
+		cout << t[i] << endl;
+	}
+}
+
 int main()
 {
 	string tablica[10];
+	int ile = 0;
 	int a;
 	do
 	{
@@ -47,7 +66,7 @@ int main()
 		switch (a)
 		{
 		case 1:
-			//funkcja
+			wypisz(tablica, ile);
 			break;
 		default:
 			break;
