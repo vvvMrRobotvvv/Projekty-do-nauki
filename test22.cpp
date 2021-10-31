@@ -16,6 +16,7 @@ bool czy()
 	{
 		cin.clear();
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cout << "Blad wczytywania sproboj ponownie" << endl;
 		return false;
 	}
 	return true;
@@ -23,32 +24,36 @@ bool czy()
 
 void menu()
 {
-	cout << "Menu glowne:\n";
+	cout << "\nMenu glowne:\n";
 	cout << "1) Wypisz\n";
-	cout << "2) \n";
+	cout << "2) Wczytaj\n";
 	cout << "3) \n";
 	cout << "0) Wyjdz" << endl;
 }
 
-void wypisz(string t[], int &ile)
+void wypisz(string t[], int ile)
 {
+	if (ile <= 0)
+	{
+		cout << "\nTablica jest pusta :(" << endl;
+		return;
+	}
 	cout << "\nTablica:\n";
-    for (int i = 0; i < ile; i++)
-    {
-        cout << "Komorka nr " << i + 1 << ": " << t[i] << endl;
-    }
+	for (int i = 0; i < ile; i++)
+	{
+		cout << "Komorka nr " << i + 1 << ": " << t[i] << endl;
+	}
+}
+
+void wczytaj(string t[], int ile, int number)
+{
+	cout << "" << endl;
 }
 
 int main()
 {
 	string tablica[10];
-    tablica[0] = "a";
-    tablica[1] = "b";
-    tablica[2] = "f";
-    tablica[3] = "e";
-    tablica[4] = "d";
-    tablica[5] = "c";
-	int ile = 6;
+	int ile = 0;
 	int a;
 	do
 	{
@@ -58,12 +63,25 @@ int main()
 			menu();
 			podaj(a);
 			cout << endl;
+			if (a < 0 || a > 3)
+				cout << "\nBlad wczytywania sproboj ponownie" << endl;
 		} while (czy() == false || a < 0 || a > 3);
 
 		switch (a)
 		{
 		case 1:
 			wypisz(tablica, ile);
+			break;
+		case 2:
+			int number;
+			cout << "\nPodaj ilosc komorek jakie chcesz zadeklarowac: ";
+			do
+			{
+				podaj(number);
+				if (number > (10 - ile))
+					cout << "\nBlad wczytywania sproboj ponownie" << endl;
+			} while (czy() == false || number > (10 - ile));
+			wczytaj(tablica, ile, number);
 			break;
 		default:
 			break;
