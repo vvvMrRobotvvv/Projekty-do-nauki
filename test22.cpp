@@ -45,9 +45,16 @@ void wypisz(string t[], int ile)
 	}
 }
 
-void wczytaj(string t[], int ile, int number)
+void wczytaj(string t[], int &ile, int number)
 {
-	cout << "" << endl;
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	for (int i = 0; i < number; i++)
+	{
+		cout << "\nPodaj komorke nr " << ile + 1 << ": ";
+		getline(cin, t[ile]);
+		ile++;
+		cout << ile << endl;
+	}
 }
 
 int main()
@@ -78,9 +85,9 @@ int main()
 			do
 			{
 				podaj(number);
-				if (number > (10 - ile))
+				if (number > 10 - ile)
 					cout << "\nBlad wczytywania sproboj ponownie" << endl;
-			} while (czy() == false || number > (10 - ile));
+			} while (czy() == false || number > 10 - ile);
 			wczytaj(tablica, ile, number);
 			break;
 		default:
