@@ -20,7 +20,7 @@ void podaj(int t[])
 		{
 			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
-			cout << "\nPodales wartosc nieliczbowa sproboj ponownie" << endl;
+			cout << "\nPodales wartosc nieliczbowa sprobuj ponownie" << endl;
 			cin >> t[i];
 		}
 		i++;

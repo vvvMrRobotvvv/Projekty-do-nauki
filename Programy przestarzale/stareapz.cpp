@@ -34,7 +34,7 @@ int main()
 			return 0;
 			break;
 		default:
-			std::cout << "\nWybrales niepoprawna opcje sproboj ponownie\n" << std::endl;
+			std::cout << "\nWybrales niepoprawna opcje sprobuj ponownie\n" << std::endl;
 		}
 	}
 	
@@ -100,7 +100,7 @@ int main()
 			a++;
 			break;
 		default:
-			std::cout << "\nWybrales niepoprawna opcje sproboj ponownie\n" << std::endl;
+			std::cout << "\nWybrales niepoprawna opcje sprobuj ponownie\n" << std::endl;
 		}
 	}
 
@@ -136,7 +136,7 @@ int main()
 						a++;
 						break;
 					default:
-						std::cout << "\nWybrales niepoprawna opcje sproboj ponownie\n" << std::endl;
+						std::cout << "\nWybrales niepoprawna opcje sprobuj ponownie\n" << std::endl;
 					}
 				} 
 				while (a == 0);
@@ -356,7 +356,7 @@ int main()
 						a++;
 						break;
 					default:
-						std::cout << "\nWybrales niepoprawna opcje sproboj ponownie\n" << std::endl;
+						std::cout << "\nWybrales niepoprawna opcje sprobuj ponownie\n" << std::endl;
 					}
 				} 
 				while (a == 0);

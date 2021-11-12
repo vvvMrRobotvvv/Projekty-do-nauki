@@ -116,7 +116,7 @@ int main()
 			return 0;
 			break;
 		default:
-			std::cout << "Wybrales niepoprawny numer sproboj ponownie" << std::endl;
+			std::cout << "Wybrales niepoprawny numer sprobuj ponownie" << std::endl;
 			goto selekcja;
 			break;
 	}

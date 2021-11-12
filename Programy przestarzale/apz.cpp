@@ -276,7 +276,7 @@ int main()
 					else if (liczba1 == 0)
 					{}
 					else
-					cout << "\n Podales niewlasciwa liczbe sproboj ponownie" << endl;
+					cout << "\n Podales niewlasciwa liczbe sprobuj ponownie" << endl;
 				} while (liczba1 != 0);	
 				break;
 			}
@@ -303,7 +303,7 @@ int main()
 				}
 				while (b >= a)
 				{
-					cout << "\nDolna granica musi byc mniejsza od drugiej sproboj ponownie ja podac" << endl;
+					cout << "\nDolna granica musi byc mniejsza od drugiej sprobuj ponownie ja podac" << endl;
 					cin >> b;
 					while (cin.fail())
 					{
@@ -324,7 +324,7 @@ int main()
 			}
 			default:
 			{
-				cout << "\nPodales niewlasciwy numer sproboj ponownie" << endl;
+				cout << "\nPodales niewlasciwy numer sprobuj ponownie" << endl;
 				break;
 			}
 		}
