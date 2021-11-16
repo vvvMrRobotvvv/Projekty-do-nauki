@@ -58,6 +58,14 @@ void wczytaj(string t[], int &ile, int number)
 
 void usuwanie(string t[], int &ile, int number)
 {
+	for(int i = number; i > 0; i--, ile--)
+	{
+		t[ile].clear();
+	}
+}
+/* Alternatywa dla funkcji usuwanie
+void usuwanie(string t[], int &ile, int number)
+{
 	int i = ile;
 	for (ile; ile > i - number; ile--)
 	{
@@ -65,7 +73,7 @@ void usuwanie(string t[], int &ile, int number)
 	}
 	cout << "Usuwanie zakonczone pomyslnie" << endl;
 }
-
+*/
 int main()
 {
 	string tablica[10];
